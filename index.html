@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <input type="url" id="link" required=True>
+  <input type="hidden" id="send" onclick="submit()">
+  <script>
+  var input = document.getElementById("link");
+  input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("send").click();
+    }
+  });
+  
+  function submit() {
+      var input = document.getElementById("link");
+      window.open(`${input.value.replace("https://classroom.google.com", "https://classroom.google.com/u/1/").replace("classroom.google.com", "https://classroom.google.com/u/1/")}`);
+  }
+  </script>
+</body>
+</html>
